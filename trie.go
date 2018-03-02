@@ -15,6 +15,10 @@ type node struct {
 	next [26]*node
 }
 
+func New() *trie {
+	return &trie{nil, 0}
+}
+
 func (trieNode trie) insert(word string) *node {
 	if trieNode is nil {
 		trieNode.root = newNode()
