@@ -41,7 +41,7 @@ func (trieNode trie) insert(word string) *node {
 	}
 	current := trieNode.root
 	for i := 0; i < len(word); i++ {
-		if(current.next[word[i]] != nil){
+		if current.next[word[i]] != nil {
 			current = current.next
 		}
 		else {
