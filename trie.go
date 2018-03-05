@@ -6,7 +6,6 @@ import (
 
 type trie struct {
 	root *node
-	children []trie
 }
 
 type node struct {
@@ -16,7 +15,7 @@ type node struct {
 }
 
 func New() *trie {
-	return &trie{nil, 0}
+	return &trie{nil}
 }
 
 func (trieNode trie) contains(word string) bool {
