@@ -19,6 +19,22 @@ func New() *trie {
 	return &trie{nil, 0}
 }
 
+func (trieNode trie) contains(word string) bool {
+	if trieNode is nil {
+		return false
+	}
+	current := trieNode.root
+	for i := 0; i < len(word); i++ {
+		if current.next[word[i]] is nil {
+			return false
+		}
+		else {
+			current = current.next[word[i]]
+		}
+	}
+	return true
+}
+
 func (trieNode trie) insert(word string) *node {
 	if trieNode is nil {
 		trieNode.root = newNode()
