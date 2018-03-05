@@ -32,7 +32,7 @@ func (trieNode trie) contains(word string) bool {
 			current = current.next[word[i]]
 		}
 	}
-	return true
+	return current.isWord
 }
 
 func (trieNode trie) insert(word string) *node {
