@@ -1,6 +1,4 @@
-// You can edit this code!
-// Click here and start typing.
-package main
+package trie
 /* Aaron Pitman */
 
 import (
@@ -13,7 +11,7 @@ type trie struct {
 
 type node struct {
 	isWord bool
-	next [26]*node
+	next [256]*node
 }
 
 func New() *trie {
@@ -52,7 +50,7 @@ func (trieNode *trie) insert(word string) {
 }
 
 func newNode() *node {
-	var next [26]*node
+	var next [256]*node
 	return &node{false,next}
 }
 
